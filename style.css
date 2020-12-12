@@ -1,0 +1,17 @@
+body {
+    background: #efefbb;
+    background: linear-gradient(to right, rgb(197, 230, 236), rgb(239,187,230));
+    color: white;
+    margin: 0;
+    font-family: rubik;
+}
+
+.container {
+    padding: 40px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 54px;
+}
