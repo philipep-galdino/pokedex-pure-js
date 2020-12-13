@@ -32,6 +32,11 @@ const fetchPokemon = () => {
                 
                 return accumulator    
             }, '')
+
+            // Catches the <ul> tag from our page and appends our <li> cards 
+            // from listPokemons.
+            const ul = document.querySelector('[data-js="pokedex"]')
+            ul.innerHTML = listPokemons
         })
 }
 
