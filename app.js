@@ -1,43 +1,47 @@
-const fetchPokemon = () => {
+/*
+    Acquires the pokemon API and requires
+    assynchronally each pokemon's data.
+*/
+
+const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`
+
+const generatePokemonPromises = () => Array(150).fill().map((_, index) => 
+    fetch(getPokemonUrl(index + 1)).then(response => response.json()))
+
+const generateTemplate = pokemons => pokemons.reduce((accumulator, { name, id, types }) => {
     /*
-        Acquires the pokemon API and requires
-        assynchronally each pokemon's data.
+        Reduces the pokemons array with each pokemon's data into a string
+        and destructures all the data - also mapped by the map function, to
+        be used and displayed into our card list.
     */
+     
+    const pokemonTypes = types.map(typeInfo => typeInfo.type.name)
+        
+    accumulator += `
+        <li class="card ${pokemonTypes[0]}">
+        <img class="card-image" alt="${name}" src="https://pokeres.bastionbot.org/images/pokemon/${id}.png" />
+            <h2 class="card-title">${id}. ${name}</h2>
+            <p class="card-subtitle">${pokemonTypes.join(' - ')}</p>
+        </li>
+    `
+        
+    return accumulator    
+}, '')    
 
-    const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`
 
-    const pokemonPromises = [] // Stores all promises resulted from below code.
-    
-    for (let i = 1; i <= 150; i++) {
-        pokemonPromises.push(fetch(getPokemonUrl(i)).then(response => response.json()))
-    }
-
-    Promise.all(pokemonPromises)
-        .then(pokemons => {
-            /*
-                Reduces the pokemons array with each pokemon's data into a string
-                and destructures all the data - also mapped by the map function, to
-                be used and displayed into our card list.
-            */
-            const listPokemons = pokemons.reduce((accumulator, pokemon) => {
-                const types = pokemon.types.map(typeInfo => typeInfo.type.name)
-                
-                accumulator += `
-                    <li class="card">
-                    <img class="card-image ${types[0]}" alt="${pokemon.name}" src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" />
-                        <h2 class="card-title">${pokemon.id}. ${pokemon.name}</h2>
-                        <p class="card-subtitle">${types.join(' - ')}</p>
-                    </li>
-                `
-                
-                return accumulator    
-            }, '')
-
-            // Catches the <ul> tag from our page and appends our <li> cards 
-            // from listPokemons.
-            const ul = document.querySelector('[data-js="pokedex"]')
-            ul.innerHTML = listPokemons
-        })
+const insertCardsIntoPage = pokemons => {
+    /*
+        Catches the <ul> tag from our page and appends our <li> cards 
+        from listPokemons.
+    */    
+    const ul = document.querySelector('[data-js="pokedex"]')
+    ul.innerHTML = pokemons
 }
 
-fetchPokemon()
+
+const pokemonPromises = generatePokemonPromises()
+// Stores all promises resulted from the function referred.
+
+Promise.all(pokemonPromises)
+    .then(generateTemplate)
+    .then(insertCardsIntoPage)
