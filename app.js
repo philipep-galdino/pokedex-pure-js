@@ -37,7 +37,7 @@ const insertCardsIntoPage = pokemons => {
         from listPokemons.
     */    
     const ul = document.querySelector('[data-js="pokedex"]')
-    ul.innerHTML = pokemons
+    ul.innerHTML += pokemons
 }
 
 const pokemonPromises = generatePokemonPromises()
