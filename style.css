@@ -132,6 +132,23 @@ h1 {
 	background-color: #F5F5F5;
 }
 
+.filter-container {
+	margin-top: 20px;
+	width: 80vw;
+	max-width: 800px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.filter {
+	width: 100%;
+	padding: 12px;
+	font-size: 16px;
+	border: 0;
+	border-radius: 10px;
+}
+
 @keyframes bounce {
 	20% {
 			transform: translateY(-6px);
