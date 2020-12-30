@@ -3,6 +3,8 @@
     assynchronally each pokemon's data.
 */
 
+const filterInput = document.querySelector('#filter')
+
 const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`
 
 const generatePokemonPromises = () => Array(150).fill().map((_, index) => 
@@ -41,6 +43,23 @@ const insertCardsIntoPage = pokemons => {
 
 const pokemonPromises = generatePokemonPromises()
 // Stores all promises resulted from the function referred.
+
+
+filterInput.addEventListener('input', event => {
+    const inputValue = event.target.value.toLowerCase()
+    const cards = document.querySelectorAll('.card')
+
+    cards.forEach(card => {
+        const pokemonName = card.querySelector('.card-title').textContent.toLowerCase()
+
+        if (pokemonName.includes(inputValue)) {
+            card.style.display = 'inline'
+            return
+        }
+
+        card.style.display = 'none'
+    })
+})
 
 Promise.all(pokemonPromises)
     .then(generateTemplate)
