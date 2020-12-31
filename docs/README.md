@@ -13,7 +13,7 @@ My intuition with this application was to learn more ways to handle web apps pro
 
 I also put in some effort on the documentation of the code, with better commentings than in my projects before and a real nice brief about my project.
 
-## What did I learn with this project?
+### What did I learn with this project?
 
 In this project I implemented what I've learned in Roger Melo's video mostly, and applied a lot of knowledge that I've carried away from other lectures. These are:
 
@@ -21,10 +21,17 @@ In this project I implemented what I've learned in Roger Melo's video mostly, an
 - what it is and how does a Closure idea work
 - best practices and refactoring code for better reading
 
--
 
 You can also check out the [TODO list](https://github.com/philipep-galdino/pokedex-pure-js/blob/master/docs/TODO.md)!
 
 These are ideas I have to put in the project, after following the whole original idea from the video, and trying to put in practice what I learned with new implementations.
 
+# Project Setup
 
+Firstly, I obviously didn't use any server or anything alike for this application, so these steps are simple to see it in production/use for development:
+
+Simply clone the project and open it in VSCode, once you're in, right click in the index.html file and select 'Open with Liver Server' (You can also just use ALT + L ALT + O). PS: You need the Live Server Extension for VSCode.
+
+```
+git clone https://github.com/philipep-galdino/pokedex-pure-js
+```
