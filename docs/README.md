@@ -19,7 +19,7 @@ In this project I implemented what I've learned in Roger Melo's video mostly, an
 
 - the functioning of a Promise from scratch
 - what it is and how does a Closure idea work
-- best practices and refactoring code for better reading
+- best practices and refactoring for better code reading
 
 
 You can also check out the [TODO list](https://github.com/philipep-galdino/pokedex-pure-js/blob/master/docs/TODO.md)!
