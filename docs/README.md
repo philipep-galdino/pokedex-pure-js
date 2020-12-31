@@ -1,4 +1,6 @@
-<p align="center">### Pokedéx Application with Pure Javascript v2
+<p align="center">
+  
+# Pokedéx Application with Pure Javascript v2
 <img src="https://media.discordapp.net/attachments/347100034942238720/794232460601982977/v2.png?width=960&height=463">
 
 A Pokedex built purely with HTML, CSS and Javascript. 
