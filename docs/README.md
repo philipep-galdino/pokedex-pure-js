@@ -1,4 +1,6 @@
-<p align="center"> Pokedéx Application with Pure Javascript v2
+<p align="center">
+  
+# Pokedéx Application with Pure Javascript v2
 <img src="https://media.discordapp.net/attachments/347100034942238720/794232460601982977/v2.png?width=960&height=463">
 
 A Pokedex built purely with HTML, CSS and Javascript. 
@@ -19,7 +21,7 @@ In this project I implemented what I've learned in Roger Melo's video mostly, an
 
 - the functioning of a Promise from scratch
 - what it is and how does a Closure idea work
-- best practices and refactoring code for better reading
+- best practices and refactoring for better code reading
 
 
 You can also check out the [TODO list](https://github.com/philipep-galdino/pokedex-pure-js/blob/master/docs/TODO.md)!
