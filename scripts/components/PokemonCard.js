@@ -1,4 +1,4 @@
-const generatePokemonCards = pokemons => pokemons.reduce((accumulator, { name, id, types }) => {
+const PokemonCards = pokemons => pokemons.reduce((accumulator, { name, id, types }) => {
     /*
         Reduces the pokemons array with each pokemon's data into a string
         and destructures all the data - also mapped by the map function, to
@@ -27,4 +27,4 @@ const insertCardsIntoPage = pokemons => {
     ul.innerHTML += pokemons
 }
 
-export { generatePokemonCards, insertCardsIntoPage }
+export { PokemonCards, insertCardsIntoPage }

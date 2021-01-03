@@ -1,4 +1,4 @@
-import { generatePokemonCards, insertCardsIntoPage } from './components/PokemonCard.js'
+import { PokemonCards, insertCardsIntoPage } from './components/PokemonCard.js'
 import handleInputValue from './controllers/PokemonController.js'
 
 /*
@@ -19,5 +19,5 @@ const pokemonPromises = generatePokemonPromises()
 filterInput.addEventListener('input', handleInputValue)
 
 Promise.all(pokemonPromises)
-    .then(generatePokemonCards)
+    .then(PokemonCards)
     .then(insertCardsIntoPage)
